@@ -1,0 +1,21 @@
+services:
+  - type: worker
+    name: sam-discord
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot_discord.py
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: SAM_MEMORY_DB_PATH
+        value: /data/sam_memory.sqlite3
+      - key: SAM_PREFIX
+        value: "!"
+    disk:
+      name: sam-data
+      mountPath: /data
+      sizeGB: 1
