@@ -1,6 +1,5 @@
---only-binary=aiohttp
-git+https://github.com/Rapptz/discord.py
-git+https://github.com/imayhaveborkedit/discord-ext-voice-recv
+--only-binary=:all:
+discord.py==2.4.0
 python-dotenv==1.0.0
 google-genai==1.2.0
 groq==0.9.0
